@@ -28,31 +28,31 @@ BarCrawler is a web application built using Ruby on Rails and React/Redux. By th
 
 ## Implementation Timeline
 
-** Phase 1: Backend setup and Front End User Authentication (2 days) **
+__Phase 1: Backend setup and Front End User Authentication (2 days)__
 
-** Objective**: Functioning rails project with front-end Authentication
+__Objective__: Functioning rails project with front-end Authentication
 
-** Phase 2: HomePage with Search connecting to Yelp API  (2 days)**
+__Phase 2: HomePage with Search connecting to Yelp API  (2 days)__
 
-**Objective**: Users can search for bars on specific location
+__Objective__*: Users can search for bars on specific location
 
-** Phase 3: List and Map of all nearby bar  (2 days)**
+__Phase 3: List and Map of all nearby bar  (2 days)__
 
-**Objective**: Users can see all available bars near by both in list and in map
+__Objective__: Users can see all available bars near by both in list and in map
 
-** Phase 3: Bar details (1 days)**
+__Phase 4: Bar details (1 days)__
 
-**Objective**: Users can click on specific bar to see its details and add review.
+__Objective__: Users can click on specific bar to see its details and add review.
 
-** Phase 4: Edit route (1 day)**
+__Phase 5: Edit route (1 day)__
 
-**Objective**: Users can add/delete/change order of bars in route
+__Objective__: Users can add/delete/change order of bars in route
 
-** Phase 4: Save route (1 day)**
+__Phase 6: Save route (1 day)__
 
-**Objective**: Users can sign in and save route
+__Objective__: Users can sign in and save route
 
-** Bonus Features (TBD) **
+__Bonus Features (TBD)__
 
 - Sign Up/ Sign In through facebook
 - Share route through Facebook
