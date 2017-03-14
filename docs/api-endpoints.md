@@ -1,34 +1,35 @@
 # API Endpoints
 
 ## HTML API
-** Root **
+__Root__
 - GET /
 
 ## JSON API
-** Users **
+__Users__
 - POST /api/users
 - PATCH /api/users
 
-** Session **
+__Session__
 - POST /api/sesion
 - DELETE /api/session
 
-** Bars **
+__Bars__
 - GET /api/bars
 - POST /api/bars
 - GET /api/bars/:id
 
-** Reviews **
+__Reviews__
 - POST /api/bars/:bar_id/reviews
 - GET /api/bars/:bar_id/reviews
 
-** Route **
+__Route__
 - GET /api/routes/
 - POST /api/routes/
 - GET /api/routes/:id
 - DELETE /api/routes/:id
 
 ## YELP API
+```
 require 'yelp'
 
 Yelp.client.configure do |config|
@@ -39,3 +40,5 @@ Yelp.client.configure do |config|
 end
 
 Yelp.client.search('San Francisco', { term: 'bars' })
+
+```

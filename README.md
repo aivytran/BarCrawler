@@ -20,11 +20,11 @@ BarCrawler is a web application built using Ruby on Rails and React/Redux. By th
 
 ## Design Docs
 
-[View Wireframes] ()
-[React Components] ()
-[API endpoints] ()
-[DB schema] ()
-[Sample State] ()
+[View Wireframes] (https://github.com/aivytran/BarCrawler/tree/master/docs/wireframes)
+[React Components] (https://github.com/aivytran/BarCrawler/blob/master/docs/component-hierarchy.md)
+[API endpoints] (https://github.com/aivytran/BarCrawler/blob/master/docs/api-endpoints.md)
+[DB schema] (https://github.com/aivytran/BarCrawler/blob/master/docs/schema.md)
+[Sample State] (https://github.com/aivytran/BarCrawler/blob/master/docs/sample-state.md)
 
 ## Implementation Timeline
 

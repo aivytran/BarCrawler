@@ -1,27 +1,27 @@
 ## Component Hierarchy
 
-** AuthFormContainer **
+__AuthFormContainer__
 - AuthForm
 
-** HomeContainer **
+__HomeContainer__
 * Header
 * Search
 
-** MapContainer **
+__MapContainer__
 * Header
 * BarsContainer
 * RouteContainer
 
-** BarsContainer **
+__BarsContainer__
 * BarsFilter
 * BarsIndex
   - BarIndexItem
 
-** RouteContainer **
+__RouteContainer__
 * RouteHeader
 * BarIndexItem
 
-** BarIndexItem **
+__BarIndexItem__
 * BarDetail
   - BarHeader
   - ReviewFormContainer
