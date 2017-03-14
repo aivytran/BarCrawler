@@ -34,7 +34,7 @@ __Objective__: Functioning rails project with front-end Authentication
 
 __Phase 2: HomePage with Search connecting to Yelp API  (2 days)__
 
-__Objective__*: Users can search for bars on specific location
+__Objective__: Users can search for bars on specific location
 
 __Phase 3: List and Map of all nearby bar  (2 days)__
 
