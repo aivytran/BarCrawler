@@ -2,7 +2,7 @@
 
 [Heroku link](https://www.heroku.com/)
 
-[Trello link ](https://trello.com/b/OQTveoS9/barcrawler)
+[Trello link] (https://trello.com/b/OQTveoS9/barcrawler)
 
 
 ## Minimum Viable Product
@@ -20,11 +20,11 @@ BarCrawler is a web application built using Ruby on Rails and React/Redux. By th
 
 ## Design Docs
 
-[View Wireframes] (https://github.com/aivytran/BarCrawler/tree/master/docs/wireframes)
-[React Components] (https://github.com/aivytran/BarCrawler/blob/master/docs/component-hierarchy.md)
-[API endpoints] (https://github.com/aivytran/BarCrawler/blob/master/docs/api-endpoints.md)
-[DB schema] (https://github.com/aivytran/BarCrawler/blob/master/docs/schema.md)
-[Sample State] (https://github.com/aivytran/BarCrawler/blob/master/docs/sample-state.md)
+View Wireframes [link] (https://github.com/aivytran/BarCrawler/tree/master/docs/wireframes)
+React Components [link] (https://github.com/aivytran/BarCrawler/blob/master/docs/component-hierarchy.md)
+API endpoints [link] (https://github.com/aivytran/BarCrawler/blob/master/docs/api-endpoints.md)
+DB schema [link] (https://github.com/aivytran/BarCrawler/blob/master/docs/schema.md)
+Sample State [link] (https://github.com/aivytran/BarCrawler/blob/master/docs/sample-state.md)
 
 ## Implementation Timeline
 
