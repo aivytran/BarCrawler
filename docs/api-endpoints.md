@@ -42,3 +42,30 @@ end
 Yelp.client.search('San Francisco', { term: 'bars' })
 
 ```
+
+## GOOGLE MAP API
+
+```
+function calculateAndDisplayRoute(map) {
+
+  const directionsService = new google.maps.DirectionsService;
+  const directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsDisplay.setMap(map);
+
+  directionsService.route({
+    origin: "San Francisco, CA",
+    destination: "Los Angeles, CA",
+    waypoints: [{location: "Davis, CA", stopover: true} ,
+                {location: "Santa Ana, CA", stopover: true}],
+    optimizeWaypoints: true,
+    travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    })
+};
+
+```
