@@ -13,3 +13,148 @@
  *= require_tree .
  *= require_self
  */
+
+
+ #header-view {
+   left: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 5;
+ }
+
+#header-view #header {
+  background-color: rgba(255, 255, 255, 0.960784);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.15);
+  height: 50px;
+}
+
+ #header-view .header-view {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#header-view #header .header-view.left {
+  left: 0;
+  height: 50px;
+}
+
+#header-view #header .header-view.right {
+  right: 20px;
+  height: 50px;
+}
+
+.beer-logo {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beer-logo img {
+  height: 45px;
+  width: 45px;
+}
+
+#header-view #header .main-logo {
+  margin: auto;
+}
+
+.main-logo {
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-logo img {
+  width: 162px;;
+}
+
+.header-auth {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+.header-auth li {
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 15px;
+  line-height: 18px;
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+}
+
+#header-view ul {
+    list-style: none;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    margin: 0;
+}
+
+.header-auth ul {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.header-auth li a {
+  color: #4a9fd5;
+}
+
+#main-page-background {
+  background:
+  radial-gradient(
+    rgba(128, 128, 128, 0.45),
+    rgba(128, 128, 128, 0.45)
+  ), url('http://assets.lookbookspro.com/stewart-cohen/gs_53601d2d-9ca4-42aa-b3b3-0fbe0a627753.gif') no-repeat center center fixed;
+
+  background-size: cover;
+}
+
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+div {
+  display: block;
+}
+
+li {
+  list-style: none;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+ul{
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+a:link {
+  text-decoration: none;
+}

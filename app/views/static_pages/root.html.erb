@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body id="main-page-background">
+    <script id="bootstrap-current-user" type="text/javascript">
+      <% if logged_in? %>
+      	window.currentUser = <%= render("api/users/user.json.jbuilder",
+      		user: current_user).html_safe %>
+      <% end %>
+    </script>
+
+    <div id="root"></div>
+
+  </body>
+</html>
