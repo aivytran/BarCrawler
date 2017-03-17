@@ -16,7 +16,7 @@ class Greeting extends React.Component {
   personalGreeting(currentUser, logout) {
     return(
       <li>
-          <img src="assets/user.png" alt="logo"/>
+          <img src={window.user_logo} alt="logo"/>
           &nbsp;&nbsp;&nbsp;
           <strong><Link onClick={logout}>Log Out</Link></strong>
     	</li>
