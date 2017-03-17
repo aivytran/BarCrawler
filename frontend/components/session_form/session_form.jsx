@@ -100,7 +100,7 @@ class SessionForm extends React.Component {
 					id="signup-signin-modal">
 
 					<div className="auth-view" >
-	          <img src="assets/beercup.png" alt="logo"/>
+	          <img src={window.beercup_url} alt="logo"/>
 						<h2>Welcome to Bar Crawler</h2>
 
 						{this.welcome()}

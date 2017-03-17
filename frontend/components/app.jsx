@@ -11,7 +11,7 @@ const App = ({ children }) => (
       </div>
 
       <div id="logo" className="main-logo">
-        <img src="assets/main-logo1.png" alt="logo"/>
+        <img src={window.main_logo} alt="logo"/>
       </div>
 
       <div className="header-view right">
