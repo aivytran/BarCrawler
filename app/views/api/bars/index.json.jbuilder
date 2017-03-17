@@ -1,5 +1,4 @@
-@bars.each do |bar, idx|
-  json.set! idx do
-    json.extract! bar, :name, :location
-  end
+json.array! @bars do |bar|
+  json.extract! bar, :name, :rating
+  json.neighborhoods bar.location.neighborhoods
 end
