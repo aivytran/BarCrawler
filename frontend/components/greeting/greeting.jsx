@@ -1,25 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SessionFormContainer from '../session_form/session_form_container';
 
-const sessionLinks = () => (
+class Greeting extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
+  sessionLinks() {
+    return(
+      <SessionFormContainer />
+    );
+  }
+
+  personalGreeting(currentUser, logout) {
+    return(
       <li>
-        <strong><Link to="/login" activeClassName="current">Log In</Link></strong>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <strong><Link to="/signup" activeClassName="current">Sign Up</Link></strong>
-      </li>
-    
-);
+          <img src="assets/user.png" alt="logo"/>
+          &nbsp;&nbsp;&nbsp;
+          <strong><Link onClick={logout}>Log Out</Link></strong>
+    	</li>
+    );
+  }
 
-const personalGreeting = (currentUser, logout) => (
-  	<div className="header-auth">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-  	</div>
-);
+  render() {
+    return(
+      <div>
+        {this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()}
+      </div>
+    );
+  }
+}
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
 
 export default Greeting;
