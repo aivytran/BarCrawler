@@ -6,7 +6,7 @@ const App = ({ children }) => (
     <div id="header">
       <div className="header-view left">
         <div id="logo" className="beer-logo">
-          <img src="assets/beercup.png" alt="logo"/>
+          <img src={window.beercup_url} alt="logo"/>
         </div>
       </div>
 
