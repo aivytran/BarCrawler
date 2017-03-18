@@ -253,7 +253,7 @@
   text-align: center;
   /*height: 80px;*/
   position: relative;
-  margin: 49px 0 82px 0;
+  margin: 44px 0 41px 0;
 }
 
 .search-view .search-welcome h2 {
@@ -344,7 +344,7 @@
 
 .nav-logo {
   display: flex;
-  padding: 0 32%;
+  padding: 2px 32% 0px;
 }
 
 /*.nav-logo img {

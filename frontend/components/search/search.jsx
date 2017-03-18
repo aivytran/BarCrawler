@@ -8,6 +8,7 @@ class Search extends React.Component {
       destination: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.autoComplete = this.autoComplete.bind(this)
   }
 
   update(field) {
@@ -20,6 +21,11 @@ class Search extends React.Component {
     e.preventDefault();
     this.props.searchBars(this.state.destination);
     hashHistory.push('/bars');
+  }
+
+  autoComplete() {
+    const input = document.getElementById('autocomplete');
+    return new google.maps.places.Autocomplete(input);
   }
 
   render() {
@@ -51,9 +57,11 @@ class Search extends React.Component {
                 <input type="text"
                   placeholder="Destination, neighborhoods, or city"
                   onChange={this.update("destination")}
-                  className="search-input" />
+                  className="search-input"
+                  id="autocomplete"/>
               </label>
             </fieldset>
+
             <button className="search-button" type="submit">
               GO
             </button>
