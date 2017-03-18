@@ -14,6 +14,7 @@
  *= require_self
  */
 
+/*header*/
 
  #header-view {
    left: 0;
@@ -118,16 +119,18 @@
   color: #4a9fd5;
 }
 
+/*background*/
 #main-page-background {
   background:
   radial-gradient(
-    rgba(128, 128, 128, 0.45),
-    rgba(128, 128, 128, 0.45)
+    rgba(128, 128, 128, 0),
+    rgba(128, 128, 128, 0)
   ), url('http://assets.lookbookspro.com/stewart-cohen/gs_53601d2d-9ca4-42aa-b3b3-0fbe0a627753.gif') no-repeat center center fixed;
 
   background-size: cover;
 }
 
+/*auth*/
 .auth-view {
   padding: 0 70px;
   text-align: center;
@@ -235,6 +238,134 @@
 .auth-view a {
   color: #6988c9;
   text-decoration: underline;
+}
+
+/*search*/
+.search-view {
+  position: relative;
+  z-index: 2;
+  padding: 90px 0;
+}
+
+.search-view .search-welcome {
+  margin: 0 auto;
+  /*width: 794px;*/
+  text-align: center;
+  /*height: 80px;*/
+  position: relative;
+  margin: 49px 0 82px 0;
+}
+
+.search-view .search-welcome h2 {
+  color: white;
+  font: bold 41px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-shadow: 2px 9px 4px #000000;
+}
+
+.search-view .search-welcome p {
+  color: white;
+  font: bold 30px "Charter",Georgia,serif;
+  margin: 0;
+  text-shadow: 2px 5px 4px #000000;
+}
+
+/*.search-form {
+
+}*/
+
+.search-form {
+  display: flex;
+  /*flex: 0 0 546px;*/
+  position: relative;
+  width: 546px;
+  z-index: 3;
+  margin: 0 auto ;
+  width: 786px;
+
+}
+
+.search-form form {
+  background: rgba(255, 255, 255, 0.960784);
+  border-radius: 8px;
+  margin: 15px 0 0;
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 2px 10px 4px #000000;
+  width: 100%;
+  height: 55px;
+}
+
+.search-form  fieldset {
+  background: white;
+  position: relative;
+  border: 2px solid #4bbfbb;
+  border-radius: 3px 0 0 3px;
+}
+
+.search-form  input {
+  /*backface-visibility: hidden;*/
+  background: transparent;
+  font: 27px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  /*height: 45px;*/
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  border: white;
+  padding: 0px 10px 0 0;
+  width: 100%;
+}
+
+.search-form label {
+  display: flex;
+}
+
+.search-form img {
+  height: 40px;
+  width: 40px;
+  padding: 0 10px 0 0;
+}
+
+.search-form  button {
+  flex: 0 0 114px;
+  width: 114px;
+  background: #4bbfbb;
+  display: block;
+  border: 2px solid #4bbfbb;
+  border-radius: 0 3px 3px 0;
+  color: white;
+  cursor: pointer;
+  font: bold 24px/54px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  height: 55px;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  padding: 0 32%;
+}
+
+/*.nav-logo img {
+  box-shadow: 10px 10px 5px black;
+}*/
+
+.nav-logo .logo {
+  align-items: center;
+  /*background-color: white;*/
+  padding: 0 90px 0 0;
+}
+
+.nav-logo .logo-text {
+  color: white;
+  font: bold 15px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-shadow: 10px 10px 5px black;
+}
+
+
+.bars-index {
+  background-color: white;
 }
 
 body {
