@@ -4,7 +4,7 @@ import Search from './search';
 
 const mapDispatchToProps = dispatch => {
   return ({
-    searchBars: (keyword) => dispatch(searchBars(keyword))
+    searchBars: (keyword, bounds) => dispatch(searchBars(keyword, bounds))
   })
 }
 

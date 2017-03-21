@@ -6,7 +6,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container'
 import Search from './search/search_container'
-import BarsIndex from './bars/bars_index_container'
+import Bars from './bar/bars_container'
+import BarDetailContainer from './bar/bar_detail_container'
 
 const Root = ({ store }) => {
 
@@ -29,7 +30,9 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Search}/>
-          <Route path="/bars" component={BarsIndex}>
+          <Route path="/bars" component={Bars}>
+            <Route path="/bars/:barName" component={BarDetailContainer}>
+            </Route>
           </Route>
         </Route>
       </Router>

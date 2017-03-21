@@ -10,11 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
 
 /*header*/
+
 
  #header-view {
    left: 0;
@@ -409,16 +410,12 @@
   flex: 1;
   min-width: 0;
   min-height: 0;
-  padding: 0 0 0 13px;
 }
 
 .bar-index-item .bar-index-card a {
   position: relative;
   border-right: 12px solid transparent;
   border-left: none;
-  display: flex;
-  text-decoration: none;
-  width: 100%;
 }
 
 .bar-index-item .bar-index-card img {
@@ -439,10 +436,6 @@
   color: black;
 }
 
-.bar-info .rating span {
-  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: rgba(0, 0, 0, 0.8)
-}
 
 .neighborhoods {
     padding: 6px 0;
@@ -465,8 +458,8 @@
 }
 
 .map-view {
-  height: 100vh;
-  width: 100vw;
+  height: 900px;
+  /*width: 900px;*/
 }
 
 .map-view .map {
@@ -544,7 +537,3 @@ a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
- body {
-   display: block;
-   margin: 0px;
- }

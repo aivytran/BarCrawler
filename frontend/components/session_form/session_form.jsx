@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.state.modalType === "login") {
-			return <p>Don't have and account? <Link onClick={this.openModal.bind(this, 'signup')}>Sign Up</Link></p>;
+			return <p>Don't have and account? <Link onClick={this.openModal.bind(this, 'signup')}>Sign Up Test</Link></p>;
 		} else {
 			return <p>Already have an account? <Link onClick={this.openModal.bind(this, 'login')}>Log In</Link></p>
 		}

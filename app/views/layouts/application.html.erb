@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhhQO2dLY4aZJ3QHsA12OB5lWz-dtaS0&libraries=places&language=en&callback=initMap" async defer></script>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBfhhQO2dLY4aZJ3QHsA12OB5lWz-dtaS0&libraries=places&language=en%" %>
+
   </head>
 
   <body id="main-page-background">
@@ -17,12 +18,8 @@
       window.compass_logo="<%= asset_path("compass.png") %>"
       window.go_logo="<%= asset_path("go.png") %>"
       window.destination="<%= asset_path("placeholder.png") %>"
-    </script>
-    <script>
-      function initMap() {
-        var input = document.getElementById('autocomplete');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-      }
+      window.yelp="<%= asset_path("yelp.png") %>"
+      window.beer="<%= asset_path("beer3.png") %>"
     </script>
     <%= yield %>
   </body>

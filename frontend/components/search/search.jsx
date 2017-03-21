@@ -11,6 +11,11 @@ class Search extends React.Component {
     this.autoComplete = this.autoComplete.bind(this)
   }
 
+  componentDidMount() {
+    const input = document.getElementById('autocomplete');
+    const autocomplete = new google.maps.places.Autocomplete(input);
+  }
+
   update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -20,7 +25,12 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.searchBars(this.state.destination);
-    hashHistory.push('/bars');
+    hashHistory.push('/bars')
+    // console.log(this.state);
+    // while (!this.state.bars) {
+    //   console.log("waiting");
+    // }
+    // hashHistory.push('/bars');
   }
 
   autoComplete() {
@@ -46,8 +56,8 @@ class Search extends React.Component {
               <div className="logo-text">go</div>
             </div>
           </div>
-          <h2> Your Bar Crawl, Your Night Out, Your Weekend </h2>
-          <p> Let's Start Planning </p>
+          <h2> Your Bar Crawl, Your Night Out, Your Weekend</h2>
+          <p> Let's Start Planning</p>
         </div>
         <div className="search-form">
           <form onSubmit={this.handleSubmit}>
