@@ -3,7 +3,6 @@ export default class MarkerManager {
     this.map = map;
     this.handleClick = handleClick;
     this.markers = [];
-    // console.log(this.markers);
     this._createMarkerFromBar = this._createMarkerFromBar.bind(this);
     this._removeMarker = this._removeMarker.bind(this);
     this._markersToRemove = this._markersToRemove.bind(this);
@@ -13,7 +12,6 @@ export default class MarkerManager {
   updateMarkers(bars){
     this.bars = bars;
     this._barsToAdd().forEach(this._createMarkerFromBar);
-    // console.log(this._markersToRemove());
     this._markersToRemove().forEach(this._removeMarker);
   }
 
@@ -28,7 +26,6 @@ export default class MarkerManager {
   }
 
   _createMarkerFromBar(bar) {
-    // console.log(bar);
     const pos = new google.maps.LatLng(bar.lat, bar.lng);
     const marker = new google.maps.Marker({
       position: pos,

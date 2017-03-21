@@ -26,11 +26,6 @@ class Search extends React.Component {
     e.preventDefault();
     this.props.searchBars(this.state.destination);
     hashHistory.push('/bars')
-    // console.log(this.state);
-    // while (!this.state.bars) {
-    //   console.log("waiting");
-    // }
-    // hashHistory.push('/bars');
   }
 
   autoComplete() {
