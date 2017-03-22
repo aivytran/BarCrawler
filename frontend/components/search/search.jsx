@@ -9,17 +9,31 @@ class Search extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.autoComplete = this.autoComplete.bind(this)
+    this.update = this.update.bind(this)
   }
 
   componentDidMount() {
     const input = document.getElementById('autocomplete');
-    const autocomplete = new google.maps.places.Autocomplete(input);
+    this.autoComplete(input)
   }
 
-  update(field) {
-		return e => this.setState({
-			[field]: e.currentTarget.value
-		});
+  autoComplete(input) {
+    const autocomplete = new google.maps.places.Autocomplete(input);
+    const update = this.update
+    const searchBars = this.props.searchBars
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        const place = autocomplete.getPlace()
+        const destination = place.address_components[0].long_name
+        update("destination", destination)
+        searchBars(destination)
+        hashHistory.push('/bars')
+    });
+  }
+
+  update(field, place) {
+		return this.setState({
+      [field] : place
+    });
 	}
 
   handleSubmit(e) {
@@ -28,10 +42,6 @@ class Search extends React.Component {
     hashHistory.push('/bars')
   }
 
-  autoComplete() {
-    const input = document.getElementById('autocomplete');
-    return new google.maps.places.Autocomplete(input);
-  }
 
   render() {
     return (
@@ -61,7 +71,6 @@ class Search extends React.Component {
                 <img src={window.destination}></img>
                 <input type="text"
                   placeholder="Destination, neighborhoods, or city"
-                  onChange={this.update("destination")}
                   className="search-input"
                   id="autocomplete"/>
               </label>

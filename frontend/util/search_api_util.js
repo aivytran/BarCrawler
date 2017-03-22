@@ -6,10 +6,10 @@ export const searchBars = (keyword, bounds) => {
   });
 };
 
-// export const searchBar = (name) => {
-//   return $.ajax({
-//     method: 'GET',
-//     url: `/api/bars/${name}`,
-//     data: {"name": name}
-//   });
-// };
+export const fetchBar = (name) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/bars/${name}`,
+    data: {"name": name}
+  });
+};

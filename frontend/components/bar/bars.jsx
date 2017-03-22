@@ -7,14 +7,13 @@ import MarkerManager from '../../util/marker_manager';
 
 
 class Bars extends React.Component {
-
   render() {
     return (
       <div>
-      {this.props.bars  &&
+      {this.props.bars.length>0  &&
         <div className="bars-view">
           <div className="map-view">
-            <BarMap bars={this.props.bars} updateFilter={this.props.updateFilter} hoverBar={this.props.hoverBar} />
+            <BarMap bars={this.props.bars} updateFilter={this.props.updateFilter} hoverBar={this.props.hoverBar}/>
           </div>
           <div className="bars-view">
             <BarIndex bars={this.props.bars} changeHoverBar={this.props.changeHoverBar} deleteHoverBar={this.props.deleteHoverBar}/>

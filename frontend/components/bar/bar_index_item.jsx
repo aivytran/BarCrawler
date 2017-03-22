@@ -20,7 +20,7 @@ class BarIndexItem extends React.Component {
     const {bar} = this.props
     return (
       <div className="bar-index-card">
-        <Link to={`/bars/${bar.name.replace(/\s+/g, '-').toLowerCase()}`} onMouseEnter={ this.onHover } onMouseLeave={this.offHover} >
+        <Link to={`/bars/${bar.name_id.replace(/\s+/g, '-').toLowerCase()}`} onMouseEnter={ this.onHover } onMouseLeave={this.offHover} >
 
           <img src={`${bar.image_url}`} ></img>
           <div className="bar-info">
