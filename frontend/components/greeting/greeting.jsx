@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory} from 'react-router';
 import SessionFormContainer from '../session_form/session_form_container';
 
 class Greeting extends React.Component {
@@ -16,7 +16,8 @@ class Greeting extends React.Component {
   personalGreeting(currentUser, logout) {
     return(
       <li>
-          <img src={window.user_logo} alt="logo"/>
+          <img src={window.user_logo} alt="logo"></img>
+          <strong><Link onClick={() => hashHistory.push('/users')}>Profile</Link></strong>
           &nbsp;&nbsp;&nbsp;
           <strong><Link onClick={logout}>Log Out</Link></strong>
     	</li>

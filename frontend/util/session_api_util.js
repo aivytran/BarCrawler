@@ -20,3 +20,11 @@ export const logout = () => {
     url: '/api/session'
   });
 };
+
+export const saveRoute = (route) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/user/routes`,
+    data: route
+  });
+};

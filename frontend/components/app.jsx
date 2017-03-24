@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, hashHistory} from 'react-router';
 import GreetingContainer from './greeting/greeting_container';
 
 const App = ({ children }) => (
@@ -6,9 +7,14 @@ const App = ({ children }) => (
     <div id="header-view">
       <div id="header">
         <div className="header-view left">
-          <div id="logo" className="beer-logo">
-            <img src={window.beercup_url} alt="logo"/>
-          </div>
+            <ul className="new-search">
+            <Link onClick={() => hashHistory.push('/')}>
+              <li>
+                <div id="logo" className="beer-logo"><img src={window.beercup_url} alt="logo"/></div>
+                <strong>New Search</strong>
+              </li>
+            </Link>
+          </ul>
         </div>
 
         <div id="logo" className="main-logo">

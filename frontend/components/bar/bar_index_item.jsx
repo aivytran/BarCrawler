@@ -24,7 +24,8 @@ class BarIndexItem extends React.Component {
 
           <img src={`${bar.image_url}`} ></img>
           <div className="bar-info">
-            <div className="label"><span>{bar.name}</span></div>
+            <div className="label">
+              <span>{bar.name}</span></div>
             <div className="rating">
               <img src={`${bar.rating}`}></img>
               <span>{bar.review_count} reviews</span>

@@ -25,15 +25,35 @@ export default class MarkerManager {
     return this.markers.filter( marker => !barNames.includes(marker.barName) );
   }
 
+  bindInfoWindow(marker, map, infowindow, content) {
+  	google.maps.event.addListener(marker, 'mouseover', function() {
+  		infowindow.setContent(content);
+  		infowindow.open(map, marker);
+  	});
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        infowindow.close();
+    });
+  }
+
   _createMarkerFromBar(bar) {
     const pos = new google.maps.LatLng(bar.lat, bar.lng);
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,
       barName: bar.name,
-      icon: window.beer
+      icon: {
+        url: window.beer,
+        size: new google.maps.Size(50, 50),
+        scaleSize: new google.maps.Size(50, 50)
+      }
     });
     marker.addListener('click', () => this.handleClick(bar));
+
+    const infowindow =  new google.maps.InfoWindow({
+  		content: ''
+  	});
+    this.bindInfoWindow(marker, this.map, infowindow, '<div className="iw-container">'+'<div className="iw-content">' + bar.name + "</div>" + "</div>");
+
     this.markers.push(marker);
   }
 
@@ -45,12 +65,14 @@ export default class MarkerManager {
 
   bounceMarker(hoverBar) {
     if (hoverBar.name && !hoverBar.delete) {
-      const currretMarker = this.markers.filter(marker => marker.barName === hoverBar.name)
-      currretMarker[0].setAnimation(google.maps.Animation.BOUNCE);
+      const currentMarker = this.markers.filter(marker => marker.barName === hoverBar.name)
+      currentMarker[0].setAnimation(google.maps.Animation.BOUNCE);
+      setTimeout(() => currentMarker[0].setAnimation(null), 4000)
     } else if (hoverBar.name && hoverBar.delete) {
-      const currretMarker = this.markers.filter(marker => marker.barName === hoverBar.name)
-      currretMarker[0].setAnimation(null);
+      const currentMarker = this.markers.filter(marker => marker.barName === hoverBar.name)
+      if (currentMarker[0]) {
+        currentMarker[0].setAnimation(null);
+      }
     }
   }
-
 }

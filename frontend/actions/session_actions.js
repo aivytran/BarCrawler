@@ -3,6 +3,8 @@ import * as APIUtil from '../util/session_api_util'
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const DELETE_ERRORS = "DELETE_ERRORS";
+export const ADD_ROUTE_TO_USER = "ADD_ROUTE_TO_USER";
+
 
 export const signup = user => dispatch => (
   APIUtil.signup(user)
@@ -33,4 +35,14 @@ export const receiveErrors = errors => ({
 export const deleteErrors = errors => ({
   type: DELETE_ERRORS,
   errors
+});
+
+export const saveRoute = (route) => dispatch => {
+  return APIUtil.saveRoute(route)
+    .then(user => dispatch(addRouteToUser(user)))
+};
+
+export const addRouteToUser = user => ({
+  type: ADD_ROUTE_TO_USER,
+  user
 });

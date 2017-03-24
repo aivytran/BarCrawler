@@ -10,6 +10,7 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.autoComplete = this.autoComplete.bind(this)
     this.update = this.update.bind(this)
+    this.updateInput = this.updateInput.bind(this)
   }
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class Search extends React.Component {
     const searchBars = this.props.searchBars
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
         const place = autocomplete.getPlace()
-        const destination = place.address_components[0].long_name
+        const destination = place.name
         update("destination", destination)
         searchBars(destination)
         hashHistory.push('/bars')
@@ -34,6 +35,12 @@ class Search extends React.Component {
 		return this.setState({
       [field] : place
     });
+	}
+
+  updateInput(field) {
+		return e => this.setState({
+			[field]: e.currentTarget.value
+		});
 	}
 
   handleSubmit(e) {
@@ -72,7 +79,8 @@ class Search extends React.Component {
                 <input type="text"
                   placeholder="Destination, neighborhoods, or city"
                   className="search-input"
-                  id="autocomplete"/>
+                  id="autocomplete"
+                  onChange={this.updateInput("destination")}/>
               </label>
             </fieldset>
 

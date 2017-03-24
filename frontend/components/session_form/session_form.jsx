@@ -36,17 +36,21 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
+		console.log(user);
+		console.log({user});
 		if (this.state.modalType === 'login') {
 			this.props.login({user});
-		} else {
+		} else if (this.state.modalType === 'signup') {
 			this.props.signup({user});
+		} else {
+			this.props.login({user: {username: "DemoUser", password: "123456"}});
 		}
 	}
 
 	navLink() {
 		if (this.state.modalType === "login") {
 			return <p>Don't have and account? <Link onClick={this.openModal.bind(this, 'signup')}>Sign Up Test</Link></p>;
-		} else {
+		} else if (this.state.modalType === 'signup') {
 			return <p>Already have an account? <Link onClick={this.openModal.bind(this, 'login')}>Log In</Link></p>
 		}
 	}
@@ -54,7 +58,7 @@ class SessionForm extends React.Component {
 	welcome() {
 		if (this.state.modalType === "login") {
 			return <h1>Log in to your account</h1>;
-		} else {
+		} else if (this.state.modalType === 'signup') {
 			return <h1>Sign up to save routes, share, and more</h1>
 		}
 	}
@@ -142,9 +146,16 @@ class SessionForm extends React.Component {
 									<div className="divider"></div>
 								</fieldset>
 
-								<button className="auth-button" type="submit">
-									{this.state.modalType}
-								</button>
+								<li>
+									<button className="auth-button" type="submit">
+										{this.state.modalType}
+									</button>
+									<button className="auth-button" type="submit">
+									<Link className="auth-button" onClick={() => this.setState(({["modalType"]: "demo"}))}>
+										Demo
+									</Link>
+									</button>
+								</li>
 
 								{this.navLink()}
 

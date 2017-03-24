@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import ModalStyle from './modal_style';
 import { hashHistory } from 'react-router';
 import {mapOptions} from './map_options'
-
+import ErrorModal from '../errors/error_modal'
 
 
 class BarDetail extends React.Component {
@@ -17,6 +17,7 @@ class BarDetail extends React.Component {
 		this.closeModal = this.closeModal.bind(this);
     this.fetchBar = this.props.fetchBar.bind(this);
     this.createMap = this.createMap.bind(this)
+    this.onClickHandle = this.onClickHandle.bind(this)
 	}
 
   componentWillMount() {
@@ -48,7 +49,6 @@ class BarDetail extends React.Component {
       if (map !== null) {
         const _mapOptions = mapOptions(bar.lat, bar.lng, 15)
         const newMap = new google.maps.Map(map, _mapOptions);
-
         const pos = new google.maps.LatLng(bar.lat, bar.lng);
         const marker = new google.maps.Marker({
           position: pos,
@@ -57,6 +57,25 @@ class BarDetail extends React.Component {
         });
       }
     });
+  }
+
+  onClickHandle() {
+    const bar_detail = {
+      name: this.props.bar.name,
+      lat: this.props.bar.lat,
+      lng: this.props.bar.lng,
+      img: this.props.bar.image_url
+    }
+    const dub_bar = this.props.route.filter(state_bar => state_bar.name === bar_detail.name)
+    if (dub_bar.length > 0) {
+      return (
+        <div>
+          <ErrorModal message="This bar is already in your route" />
+        </div>
+      )
+    } else {
+      this.props.addBar(bar_detail)
+    }
   }
 
 
@@ -97,9 +116,10 @@ class BarDetail extends React.Component {
             <div className="bar-nav">
               <div className="bar-nav-bar">
                 <div className="action-view">
-                  <div className="add-to-route-button" role="button">
+                  <Link className="add-to-route-button"
+                    onClick={this.onClickHandle}>
                     <span> Add to Route </span>
-                  </div>
+                  </Link>
                 </div>
                 <div className="details">
                   <ul>

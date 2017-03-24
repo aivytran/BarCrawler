@@ -1,5 +1,6 @@
 require 'json'
 require 'net/http'
+require 'open-uri'
 
 class Api::BarsController < ApplicationController
   def index
@@ -38,7 +39,8 @@ class Api::BarsController < ApplicationController
   end
 
   def get_bar_review(token, nameID)
-    url = URI.parse("https://api.yelp.com/v3/businesses/" + nameID + "/reviews")
+    encoded_url = URI::encode("https://api.yelp.com/v3/businesses/" + nameID + "/reviews")
+    url = URI.parse(encoded_url)
     req = Net::HTTP::Get.new(url.request_uri)
     req["Authorization"] = "Bearer " + token
     http = Net::HTTP.new(url.host, url.port)
@@ -48,7 +50,8 @@ class Api::BarsController < ApplicationController
   end
 
   def get_bar_detail(token, nameID)
-    url = URI.parse("https://api.yelp.com/v3/businesses/" + nameID)
+    encoded_url = URI::encode("https://api.yelp.com/v3/businesses/" + nameID)
+    url = URI.parse(encoded_url)
     req = Net::HTTP::Get.new(url.request_uri)
     req["Authorization"] = "Bearer " + token
     http = Net::HTTP.new(url.host, url.port)
