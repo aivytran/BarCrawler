@@ -36,8 +36,6 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		console.log(user);
-		console.log({user});
 		if (this.state.modalType === 'login') {
 			this.props.login({user});
 		} else if (this.state.modalType === 'signup') {

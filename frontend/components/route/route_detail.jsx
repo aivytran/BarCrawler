@@ -26,10 +26,6 @@ class RouteDetail extends React.Component {
 		});
 	}
 
-  // componentWillMount() {
-  //   console.log(this.props.currentRoute);
-  //   this.props.changeCurrentRoute(this.props.currentRoute)
-  // }
 
   componentDidUpdate() {
     this.createMap()
