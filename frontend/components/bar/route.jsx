@@ -122,8 +122,9 @@ class Route extends React.Component {
             					isOpen={this.state.modalOpen}
             					onRequestClose={this.closeModal}
             					style={ModalStyle}>
-                      <p>Name Your Route!</p>
+
                       <form className="route-name-form" onSubmit={this.handleSubmit}>
+                        <p>Name Your Route!</p>
                         <fieldset className="new-route-name">
         									<label>
         										<input type="text"

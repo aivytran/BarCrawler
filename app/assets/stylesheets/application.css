@@ -247,10 +247,7 @@
   margin: 20px 0 0;
 }
 
-.auth-view a {
-  color: #6988c9;
-  text-decoration: underline;
-}
+
 
 /*search*/
 .search-view {
@@ -1426,10 +1423,60 @@ section.trip-card {
     height: 33px;
 }
 
+form.route-name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form.route-name-form p {
+    font: bold 24px/3px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #464553;
+}
+
 ul.new-search strong {
   color: #f55d47;
   font-size: 16px;
   /* font-weight: 800; */
+}
+
+fieldset.new-route-name {
+    background: white;
+    position: relative;
+    border: 2px solid #e84028;
+    border-radius: 3px 0 0 3px;
+    width: 500px;
+}
+
+button.route-name-button {
+    margin: 30px auto 0;
+    width: 140px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    font: bold 14px/40px "Lato",sans-serif;
+    height: 40px;
+    padding: 0 20px;
+    /* box-shadow: -5px 14px 17px 0 rgba(0,0,0,0.2); */
+    color: white;
+    letter-spacing: .8px;
+}
+
+input.route-name {
+    width: 100%;
+    background: transparent;
+    font: 25px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    /* height: 45px; */
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    border: white;
+    padding: 0px 10px 0 0;
+    width: 100%;
+}
+
+.side-col-view a:hover {
+    text-decoration: none;
 }
 
 b {
@@ -1506,6 +1553,7 @@ a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
  body {
    display: block;
    margin: 0px;
