@@ -65,8 +65,8 @@ class User extends React.Component {
                 </div>
                 <div className="trip-list-view">
                   <div className="trip-list">
-                    {currentUser.routes.map( route => (
-                    <div className="trip-card-view">
+                    {currentUser.routes.map( (route,idx) => (
+                    <div className="trip-card-view" key={idx}>
                       <section className="trip-card">
                         <header>
                           <div className="header-group">
