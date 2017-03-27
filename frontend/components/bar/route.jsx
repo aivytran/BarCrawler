@@ -82,7 +82,7 @@ class Route extends React.Component {
             <div className="trip-route">
             {route.length>0 &&
               route.map((route, idx) => (
-              <div className="waypoint-view">
+              <div className="waypoint-view" key={idx}>
 
                 <div className="waypoint-card">
                   <div className="waypoint-info">
