@@ -133,7 +133,7 @@
   radial-gradient(
     rgba(128, 128, 128, 0.4),
     rgba(128, 128, 128, 0.4)
-  ), url('http://assets.lookbookspro.com/stewart-cohen/gs_53601d2d-9ca4-42aa-b3b3-0fbe0a627753.gif') no-repeat center center fixed;
+  ), url('https://res.cloudinary.com/dtoyiojuy/image/upload/v1492628921/main_page_hlmz6q.gif') no-repeat center center fixed;
 
   background-size: cover;
 }
@@ -669,7 +669,7 @@
 }*/
 
 .bar-header .header-image img:hover{
-  transform:scale(1.3);
+  transform:scale(1.1);
 }
 
 .bar-header .header-image img {
