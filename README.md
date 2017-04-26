@@ -10,7 +10,7 @@ BarCrawler is a full-stack web application. It utilizes Ruby on Rails on the bac
 
 On the main page, there is a search bar where you can search for bars in any city, neighborhoods. The search input has autocomplete feature so user don't have to type in the whole word. The search engine uses yelp api to generate nearby bars.
 
-<img src="http://res.cloudinary.com/dtoyiojuy/video/upload/q_100/v1493241509/bar1_iogf39.gif" alt="Event Ticket" />
+<img src="docs/readmepics/bar1_.gif" alt="Event Ticket" />
 
 ### Map and Bar View
 All nearby bars show up in a list and map. User can zoom in/out and drag map to different area to look for new bars.
