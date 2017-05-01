@@ -1,6 +1,6 @@
 # Bar Crawler
 
-[BarCrawler Link](https://barcrawlersf.herokuapp.com/)
+[BarCrawler Link](http://barcrawler.aivytran.com/?utm_source=barcrawler&utm_medium=github)
 
 BarCrawler is a full-stack web application. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
