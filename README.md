@@ -1,25 +1,23 @@
 # Bar Crawler
 
-[BarCrawler Link](https://barcrawlersf.herokuapp.com/)
+[BarCrawler Live Link](http://barcrawler.aivytran.com/?utm_source=barcrawler&utm_medium=github)
 
-BarCrawler is a full-stack web application. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
+BarCrawler is a full-stack web application. It utilizes Ruby on Rails with a PostgreSQL database on the backend , and React with a Redux architectural framework on the frontend.
 
 ## Features & Implementation
 
-### Search Bar
+### Bars View
+Bars View is rendered from two different components: `BarMap` and `SideCol`. All the available bars are fetched from Yelp API on the backend and rendered on the frontend through Redux circle.
 
-On the main page, there is a search bar where you can search for bars in any city, neighborhoods. The search input has autocomplete feature so user don't have to type in the whole word. The search engine uses yelp api to generate nearby bars.
+`SideCol` renders `BarIndex` and `Route` components.
 
-<img src="docs/readmepics/bar1.gif" alt="Event Ticket" />
 
-### Map and Bar View
-All nearby bars show up in a list and map. User can zoom in/out and drag map to different area to look for new bars.
+`BarMap` utilizes Google Map API to render a map and place bar's matching marker on map using its latitude and longitude. The map is interactive; users can drag the map to a new location or zoom in/out to render new bars. When the map's location changed, its l
 
-When hovering over an item on the list, user can see the marker on the bar bouncing.
-
-User can click on item on list or marker on map see detail of certain bar. Information, reviews, and rating of the bar is generated from yelp api.
+For better UX/UI, users can see bouncing bar's marker on map that reacts to mouse hovering on side column. `BarMap` interacts with `SideCol` through global `state`. When user hover over a bar on `SideCol`, `changeHoverBar` function is called to dispatch an `action`. The Redux's `store` listens to that `action` and triggers its `reducer` to update the global `state`. When the `state` is update, `BarMap` component triggers its `componentDidUpdate` function, which calls `bounceMarker` function that uses Google Map API's `setAnimation` to make the bar's marker bounce. The same architecture is used to stop marker bouncing once users hover off.
 
 <img src="docs/readmepics/bar2.gif" alt="Event Ticket" />
+<img src="docs/readmepics/bar3.gif" alt="Event Ticket" />
 
 ### Route
 When viewing bar detail, user can choose to add bar to their route. The map will show a walking route. This features user google map direction api to generate the fastest walking route.

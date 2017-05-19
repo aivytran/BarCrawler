@@ -22,7 +22,6 @@ class Api::BarsController < ApplicationController
   def show
     name = params[:name]
     @bar = get_bar(name)
-    p @bar
     render :show
   end
 

@@ -6,9 +6,7 @@ import { hashHistory } from 'react-router';
 import {mapOptions} from './map_options'
 import ErrorModal from '../errors/error_modal'
 
-
 class BarDetail extends React.Component {
-
   constructor(props) {
 		super(props);
 		this.state = {
